@@ -1,0 +1,19 @@
+# Build-context excludes for the Koyeb/Docker image. Keeps the static image
+# lean and avoids web-serving backend source or dev tooling.
+.git
+.gitignore
+node_modules
+.claude
+.env
+.env.local
+*.log
+.DS_Store
+Dockerfile
+.dockerignore
+
+# Backend + docs + plugin are not part of the static frontend bundle
+supabase
+docs
+design_handoff_fast_ila
+wordpress-plugin
+.serve.py

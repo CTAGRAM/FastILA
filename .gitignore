@@ -1,0 +1,26 @@
+.DS_Store
+node_modules/
+.env
+.env.local
+.vercel
+.netlify
+.idea
+.vscode
+
+# Local agent state — contains the Supabase access token. NEVER commit.
+.claude/
+*.pem
+*.key
+*.log
+
+# Supabase local dev
+supabase/.branches
+supabase/.temp
+
+# Build artefacts (none — this is a static site)
+dist/
+
+# OS / editors
+Thumbs.db
+*.swp
+*~

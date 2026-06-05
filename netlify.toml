@@ -1,0 +1,40 @@
+# Netlify deployment config for Fast-ILA
+# No build step — this is a static React-via-Babel app.
+
+[build]
+  publish = "."
+  command = "echo 'No build step — static site'"
+
+[[redirects]]
+  from = "/booking"
+  to   = "/?mode=booking"
+  status = 200
+
+[[redirects]]
+  from = "/portal"
+  to   = "/?mode=portal"
+  status = 200
+
+[[redirects]]
+  from = "/admin"
+  to   = "/?mode=dashboard"
+  status = 200
+
+[[redirects]]
+  from = "/embed"
+  to   = "/?mode=booking&chrome=off"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# The /embed route is iframed by the WordPress plugin — allow cross-origin.
+[[headers]]
+  for = "/embed*"
+  [headers.values]
+    X-Frame-Options = "ALLOWALL"
+    Content-Security-Policy = "frame-ancestors *"

@@ -1,0 +1,250 @@
+/* ============================================================
+   Fast-ILA Design Tokens
+   Sourced from existing site: deep navy + lime accent + cream
+   ============================================================ */
+
+:root {
+  /* Brand */
+  --navy-900: #042b3d;
+  --navy-800: #063952;
+  --navy-700: #0a4a67;
+  --navy-600: #115d7e;
+  --navy-500: #1f7497;
+
+  --lime: #d7ed3f;
+  --lime-hover: #c7dd2a;
+  --lime-deep: #aac220;
+
+  --cream: #f8f5c2;
+  --cream-soft: #fcf9d6;
+  --cream-tint: #fefcea;
+
+  --off-white: #f7f6f1;
+  --paper: #fbfaf6;
+  --white: #ffffff;
+
+  /* Functional */
+  --ink: #042b3d;
+  --ink-soft: #2b4d5e;
+  --ink-muted: #6b8190;
+  --ink-faint: #95a8b5;
+  --hairline: #dee5ea;
+  --hairline-soft: #ecf0f3;
+
+  --success: #2f8b5b;
+  --success-bg: #e4f3eb;
+  --warning: #c47a17;
+  --warning-bg: #fdf2dc;
+  --danger: #c0402d;
+  --danger-bg: #fbe5e0;
+  --info: #1f7497;
+  --info-bg: #e2eef5;
+
+  /* Type */
+  --font-display: "Sora", system-ui, -apple-system, sans-serif;
+  --font-ui: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Radii */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(4, 43, 61, 0.05), 0 1px 1px rgba(4, 43, 61, 0.03);
+  --shadow-md: 0 4px 12px rgba(4, 43, 61, 0.08), 0 1px 3px rgba(4, 43, 61, 0.05);
+  --shadow-lg: 0 18px 40px rgba(4, 43, 61, 0.18), 0 4px 12px rgba(4, 43, 61, 0.08);
+  --shadow-pop: 0 24px 60px rgba(4, 43, 61, 0.32);
+
+  /* Layout */
+  --max-w: 1280px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
+
+/* Display type */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* ============================================================
+   Fast-ILA wordmark — uses real brand PNG
+   ============================================================ */
+.brand-wordmark {
+  display: inline-block;
+  height: var(--bw-h, 28px);
+  width: var(--bw-w, 117px);
+  background: url("assets/fastila-logo.png") no-repeat center left / contain;
+  text-decoration: none;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.brand-wordmark > * { display: none !important; }
+.brand-wordmark.on-navy {
+  /* Logo PNG has dark navy text — invert to white-ish for dark bg use cases */
+  filter: invert(98%) brightness(110%);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: var(--r-sm);
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 80ms ease, background 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-lime {
+  background: var(--lime);
+  color: var(--navy-900);
+  border-color: var(--lime);
+}
+.btn-lime:hover { background: var(--lime-hover); border-color: var(--lime-hover); }
+
+.btn-navy {
+  background: var(--navy-800);
+  color: var(--white);
+  border-color: var(--navy-800);
+}
+.btn-navy:hover { background: var(--navy-700); border-color: var(--navy-700); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--hairline);
+}
+.btn-ghost:hover { background: var(--off-white); }
+
+.btn-ghost-light {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.btn-ghost-light:hover { background: rgba(255, 255, 255, 0.08); }
+
+.btn-lg { padding: 14px 22px; font-size: 15px; border-radius: var(--r-md); }
+.btn-block { width: 100%; }
+
+/* Pills / badges */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+  white-space: nowrap;
+}
+.pill-lime { background: var(--lime); color: var(--navy-900); }
+.pill-navy { background: var(--navy-800); color: var(--white); }
+.pill-cream { background: var(--cream); color: var(--navy-900); }
+.pill-outline { background: transparent; border: 1px solid currentColor; }
+.pill-success { background: var(--success-bg); color: var(--success); }
+.pill-warning { background: var(--warning-bg); color: var(--warning); }
+.pill-danger { background: var(--danger-bg); color: var(--danger); }
+.pill-info { background: var(--info-bg); color: var(--info); }
+.pill-muted { background: var(--hairline-soft); color: var(--ink-soft); }
+
+/* Form controls */
+.field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.field-label .req { color: var(--danger); margin-left: 2px; }
+
+.field-input,
+.field-textarea,
+.field-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-sm);
+  background: var(--white);
+  color: var(--navy-900);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.field-input::placeholder,
+.field-textarea::placeholder { color: #99a7b1; }
+.field-input:focus,
+.field-textarea:focus,
+.field-select:focus {
+  outline: none;
+  border-color: var(--navy-700);
+  box-shadow: 0 0 0 3px rgba(17, 93, 126, 0.12);
+}
+.field-textarea { resize: vertical; min-height: 90px; }
+
+/* Cards */
+.card {
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Hairlines */
+.divider {
+  height: 1px;
+  background: var(--hairline);
+  width: 100%;
+}
+
+/* Utility */
+.row { display: flex; }
+.col { display: flex; flex-direction: column; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-5 { gap: 20px; }
+.gap-6 { gap: 24px; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.flex-1 { flex: 1; min-width: 0; }
+.mono { font-family: ui-monospace, "SF Mono", "JetBrains Mono", monospace; }
+
+/* Scrollbar - subtle */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: rgba(4, 43, 61, 0.18); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(4, 43, 61, 0.3); }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

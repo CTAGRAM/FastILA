@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fast-ila/booking",
+  "title": "Fast-ILA Booking",
+  "category": "widgets",
+  "icon": "calendar-alt",
+  "description": "Embed the Fast-ILA Independent Legal Advice booking form.",
+  "textdomain": "fast-ila-booking",
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "height":  { "type": "number", "default": 1100 },
+    "theme":   { "type": "string", "default": "light",   "enum": ["light", "dark"] },
+    "layout":  { "type": "string", "default": "stacked", "enum": ["stacked", "grid"] },
+    "service": { "type": "string", "default": "" }
+  },
+  "editorScript": "file:./edit.js",
+  "render": "file:./render.php"
+}
