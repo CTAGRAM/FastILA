@@ -16,8 +16,8 @@ port = 54323
 
 [auth]
 enabled = true
-site_url = "http://localhost:5173"
-additional_redirect_urls = ["http://localhost:5173", "https://fast-ila.co.uk"]
+site_url = "https://fastila-goodfor-46310a61.koyeb.app"
+additional_redirect_urls = ["https://fastila-goodfor-46310a61.koyeb.app", "https://fast-ila.co.uk", "http://localhost:5173"]
 jwt_expiry = 3600
 enable_signup = true
 
